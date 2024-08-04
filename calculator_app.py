@@ -6,7 +6,14 @@
 #   showing up on the console.
 
 def calculator():
-    task = input("Please enter what you would like to calculate (add/subtract/multiply/divide):\t")
+    while True:
+        operator = ("add", "subtract", "multiply", "divide")
+        task = input("Please enter what you would like to calculate (add/subtract/multiply/divide):\t")
+        if task not in operator:
+            print("Invalid input, please try again")
+            continue
+        else:
+            break
     num1 = float(input("Enter the first number:\t"))
     num2= float(input("enter the second number:\t"))
     num_list = [num1, num2]
@@ -15,7 +22,7 @@ def calculator():
             print(f"Answer: {sum(num_list)}")
             break
         elif task == "subract":
-            print(f"Answer: {(num_list[0] - num_list[1])}")
+            print(f"Answer: {num_list[0] - num_list[1]}")
             break
         elif task == "multiply":
             print(f"Answer: {num_list[0] * num_list[1]}")
