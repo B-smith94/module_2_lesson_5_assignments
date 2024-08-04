@@ -8,7 +8,7 @@
 def calculator():
     while True:
         operator = ("add", "subtract", "multiply", "divide")
-        task = input("Please enter what you would like to calculate (add/subtract/multiply/divide):\t")
+        task = input("Please enter what you would like to calculate (add/subtract/multiply/divide):\t").lower()
         if task not in operator:
             print("Invalid input, please try again")
             continue
