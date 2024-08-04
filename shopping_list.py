@@ -6,7 +6,7 @@
 
 def shopping_list(items=[]):
     while True:
-        changes = input("Would you like to make changes to your list? (yes/no)\t")
+        changes = input("Would you like to make changes to your list? (yes/no)\t").lower()
         while changes == "yes":
             add_or_remove = input("Ok, would you like to add to the list or take items away? (type 'add' or 'remove')\n")
             if add_or_remove == "add":
