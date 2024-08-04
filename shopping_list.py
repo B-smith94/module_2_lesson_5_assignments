@@ -19,9 +19,9 @@ def shopping_list(items=[]):
                 print("Invalid input, please try again.")
                 continue
         else:
-            separator = input("How would you like your list formatted? Please type '-', '--', or ', '.\t")
+            separator = input("How would you like to separate the items on your list?\t")
             new_list = separator.join(items)
             break
-    print(new_list)
+    print(f"Great, here is your updated list:\n{new_list}")
 
 shopping_list(['tomatoes', 'peppers', 'cereal'])
