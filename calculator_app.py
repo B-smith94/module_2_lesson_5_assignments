@@ -4,6 +4,33 @@
 #3. Ensure your code can handle division by zero and other potential errors.
 #   So if you divide by 0, there is error handling set up to prevent an error from 
 #   showing up on the console.
+def add (num1, num2):
+    numbers = [num1, num2]
+    for num in numbers:
+        print(f"Answer: {num1 + num2}")
+        break
+
+def subtract(num1, num2):
+    numbers = [num1, num2]
+    for num in numbers:
+        print(f"Answer: {num1 - num2}")
+        break
+
+def multiply(num1, num2):
+    numbers = [num1, num2]
+    for num in numbers:
+        print(f"Answer: {num1 * num2}")
+        break
+
+def divide(num1, num2):
+    numbers = [num1, num2]
+    for num in numbers:  
+        try:
+            result = num1 / num2
+        except ZeroDivisionError:
+            result = 0
+        print(f"Answer: {result}")
+        break
 
 def calculator():
     while True:
@@ -28,23 +55,13 @@ def calculator():
             print("Invalid input, please try again.")
             continue
         break
-    num_list = [num1, num2]
-    for answer in num_list:
-        if task == "add":
-            print(f"Answer: {sum(num_list)}")
-            break
-        elif task == "multiply":
-            print(f"Answer: {num_list[0] * num_list[1]}")
-            break
-        elif task == "divide":
-            try:
-                result = num_list[0] / num_list[1]
-            except ZeroDivisionError:
-                result = 0
-            print(f"Answer: {result}")
-            break
-        else:
-            print(f"Answer: {num_list[0] - num_list[1]}")
-            break
+    if task == "add":
+        add(num1, num2)
+    elif task == "multiply":
+        multiply(num1, num2)
+    elif task == "divide":
+        divide(num1, num2)
+    else:
+        subtract(num1, num2)
 
 calculator()
